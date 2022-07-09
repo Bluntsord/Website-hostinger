@@ -9,10 +9,6 @@ on:
   pull_request:
     branches: [ "main" ]
 
-defaults:
-  run:
-    working-directory: ./tunis
-
 jobs:
   build:
 
@@ -30,6 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: cd ./src
     - run: npm ci
     - run: npm run build --if-present
     - run: serve -s build
