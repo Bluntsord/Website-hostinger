@@ -14,13 +14,17 @@ defaults:
     working-directory: ./tunis
 
 jobs:
-  build:
+  build: Build in the current directory
     runs-on: self-hosted
 
     strategy:
       matrix:
         node-version: [ 16.16.0 ]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    defaults:
+      run:
+        working-directory: ./tunis
 
     steps:
     - uses: actions/checkout@v3
