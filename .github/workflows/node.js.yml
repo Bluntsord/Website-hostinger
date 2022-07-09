@@ -14,7 +14,7 @@ defaults:
     working-directory: ./tunis
 
 jobs:
-  build: Build in the current directory
+  build:
     runs-on: self-hosted
 
     strategy:
